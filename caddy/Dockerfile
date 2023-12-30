@@ -1,3 +1,7 @@
 FROM caddy/caddy
 
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY start-caddy.sh /start-caddy.sh
+
+RUN chmod +x /start-caddy.sh
+
+CMD ["/start-caddy.sh"]
