@@ -1,7 +1,7 @@
 FROM caddy/caddy
 
-COPY start-caddy.sh /start-caddy.sh
+COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /start-caddy.sh
+RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/start-caddy.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
