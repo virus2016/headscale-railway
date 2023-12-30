@@ -1,11 +1,10 @@
 FROM headscale/headscale:0.22.3-debug
 
-RUN apt-get update && apt-get install -y openssh-server
-
 WORKDIR /var/lib/headscale
 
 COPY config.yml /etc/headscale/config.yml
+COPY entrypoint.sh entrypoint.sh
 
-ENTRYPOINT service ssh restart && headscale serve
+RUN chmod +x entrypoint.sh
 
-# CMD [ "headscale", "serve" ]
+ENTRYPOINT ["entrypoint.sh"]
