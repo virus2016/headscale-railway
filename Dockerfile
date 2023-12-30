@@ -1,4 +1,4 @@
-FROM headscale/headscale:0.22.3
+FROM headscale/headscale:0.22.3-debug
 
 WORKDIR /var/lib/headscale
 
