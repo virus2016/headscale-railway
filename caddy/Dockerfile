@@ -1,9 +1,11 @@
 FROM caddy/caddy
 
-COPY entrypoint.sh /etc/caddy/entrypoint.sh
 
-RUN chmod +x /etc/caddy/entrypoint.sh
+COPY Caddyfile /etc/caddy/Caddyfile
+# COPY entrypoint.sh /etc/caddy/entrypoint.sh
 
-USER root
+# RUN chmod +x /etc/caddy/entrypoint.sh
 
-ENTRYPOINT ["/etc/caddy/entrypoint.sh"]
+# USER root
+
+# ENTRYPOINT ["/etc/caddy/entrypoint.sh"]
