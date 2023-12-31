@@ -2,10 +2,10 @@
 
 # Generate Caddyfile
 cat <<EOF > /etc/caddy/Caddyfile
-https://${PUBLIC_URL} {
-    reverse_proxy /web* http://${UI} 
+0.0.0.0 {
+    reverse_proxy /web* http://headscale-ui.railway.internal
 
-    reverse_proxy * http://${BACKEND}:8080
+    reverse_proxy * http://headscale-production.up.railway.app:8080
 }
 EOF
 
